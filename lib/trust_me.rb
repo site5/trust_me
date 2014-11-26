@@ -4,7 +4,6 @@ require "uri"
 require "net/http"
 require "base64"
 require "openssl"
-require "securerandom"
 
 class TrustMe
   # Public: URL to the TeleSign REST API.
@@ -186,6 +185,7 @@ class TrustMe
   #
   # Returns a String.
   def generate_uuid
+    require "securerandom"
     SecureRandom.uuid
   end
 
